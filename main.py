@@ -6,7 +6,7 @@ from pynput.keyboard import Listener, KeyCode
 """
 variables to control delay, mouse click, and start / stop buttons
 """
-delay = 0.00001
+delay = 0.001
 button_to_click = Button.left
 start_stop_key = KeyCode(char='a')
 terminate_key = KeyCode(char='b')
@@ -54,7 +54,6 @@ class ClickMouse(threading.Thread):
             while self.running:
                 mouse.click(self.button_to_click)
                 time.sleep(self.delay)
-            time.sleep(0.1)
 
 
 mouse = Controller()
